@@ -5,6 +5,8 @@
  */
 package main;
 
+import static java.lang.Math.pow;
+
 /**
  *
  * @author User
@@ -81,7 +83,7 @@ public class Menu extends javax.swing.JFrame {
         jLabel18 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
         obliczOdfermentowanie = new javax.swing.JButton();
-        OdfermResult = new javax.swing.JTextField();
+        odfermResult = new javax.swing.JTextField();
         blgKonc = new javax.swing.JTextField();
         blgPocz = new javax.swing.JTextField();
         jPanel7 = new javax.swing.JPanel();
@@ -118,6 +120,7 @@ public class Menu extends javax.swing.JFrame {
         energiaResult = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Kalkulator piwowarski");
 
         jPanel1.setName("IBU"); // NOI18N
 
@@ -190,7 +193,7 @@ public class Menu extends javax.swing.JFrame {
                     .addComponent(utylizacja)
                     .addComponent(alfaKwasy)
                     .addComponent(masaChmielu))
-                .addContainerGap(125, Short.MAX_VALUE))
+                .addContainerGap(167, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -217,7 +220,7 @@ public class Menu extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel35)
                     .addComponent(ibuResult, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(50, Short.MAX_VALUE))
+                .addContainerGap(72, Short.MAX_VALUE))
         );
 
         masaChmielu.getAccessibleContext().setAccessibleName("masaChmielu");
@@ -294,7 +297,7 @@ public class Menu extends javax.swing.JFrame {
                         .addComponent(objBrzeczki1)
                         .addComponent(ibu))
                     .addComponent(ChmielResult, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(134, Short.MAX_VALUE))
+                .addContainerGap(176, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -321,7 +324,7 @@ public class Menu extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel30)
                     .addComponent(ChmielResult, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(40, Short.MAX_VALUE))
+                .addContainerGap(62, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("ilość Chmielu", jPanel2);
@@ -346,6 +349,7 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
+        jednPasteryzacjiResult.setMaximumSize(new java.awt.Dimension(214, 2147483647));
         jednPasteryzacjiResult.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jednPasteryzacjiResultActionPerformed(evt);
@@ -375,7 +379,7 @@ public class Menu extends javax.swing.JFrame {
                     .addComponent(jednPasteryzacjiResult, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
                     .addComponent(temperaturaPasteryzacji)
                     .addComponent(czasPasteryzacji))
-                .addContainerGap(55, Short.MAX_VALUE))
+                .addContainerGap(97, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -394,7 +398,7 @@ public class Menu extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(jednPasteryzacjiResult, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(58, Short.MAX_VALUE))
+                .addContainerGap(80, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("pasteryzacja", jPanel3);
@@ -413,6 +417,12 @@ public class Menu extends javax.swing.JFrame {
         });
 
         jLabel25.setText("wydajnosc");
+
+        wydajnoscWarzelniResult.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                wydajnoscWarzelniResultActionPerformed(evt);
+            }
+        });
 
         zasyp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -442,7 +452,7 @@ public class Menu extends javax.swing.JFrame {
                     .addComponent(wydajnoscWarzelniResult, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
                     .addComponent(zasyp)
                     .addComponent(ekstrakt))
-                .addContainerGap(114, Short.MAX_VALUE))
+                .addContainerGap(156, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -461,7 +471,7 @@ public class Menu extends javax.swing.JFrame {
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel25)
                     .addComponent(wydajnoscWarzelniResult, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(58, Short.MAX_VALUE))
+                .addContainerGap(80, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("wyd warzelni", jPanel4);
@@ -493,6 +503,12 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
+        wydajnoscZacieruResult.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                wydajnoscZacieruResultActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
@@ -500,7 +516,7 @@ public class Menu extends javax.swing.JFrame {
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addGap(97, 97, 97)
                 .addComponent(obliczWydajnoscZacieru)
-                .addGap(89, 195, Short.MAX_VALUE))
+                .addGap(89, 237, Short.MAX_VALUE))
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addGap(87, 87, 87)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
@@ -535,7 +551,7 @@ public class Menu extends javax.swing.JFrame {
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel22)
                     .addComponent(wydajnoscZacieruResult, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(75, Short.MAX_VALUE))
+                .addContainerGap(97, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("wyd zacieru", jPanel5);
@@ -549,6 +565,17 @@ public class Menu extends javax.swing.JFrame {
         jLabel19.setText("Odfermentowanie");
 
         obliczOdfermentowanie.setText("Oblicz");
+        obliczOdfermentowanie.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                obliczOdfermentowanieActionPerformed(evt);
+            }
+        });
+
+        odfermResult.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                odfermResultActionPerformed(evt);
+            }
+        });
 
         blgKonc.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -576,13 +603,13 @@ public class Menu extends javax.swing.JFrame {
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel6Layout.createSequentialGroup()
                         .addGap(34, 34, 34)
-                        .addComponent(OdfermResult, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(odfermResult, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(blgKonc, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(blgPocz, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(91, Short.MAX_VALUE))
+                .addContainerGap(133, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -600,8 +627,8 @@ public class Menu extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel19)
-                    .addComponent(OdfermResult, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(71, Short.MAX_VALUE))
+                    .addComponent(odfermResult, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(93, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("odfermentowanie", jPanel6);
@@ -660,12 +687,13 @@ public class Menu extends javax.swing.JFrame {
                     .addComponent(obliczWode)
                     .addComponent(jLabel16))
                 .addGap(30, 30, 30)
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(czas, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
-                    .addComponent(odparWodaResult)
-                    .addComponent(wydajnosc)
-                    .addComponent(Moc))
-                .addContainerGap(70, Short.MAX_VALUE))
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(czas, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
+                        .addComponent(wydajnosc)
+                        .addComponent(Moc))
+                    .addComponent(odparWodaResult, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(42, Short.MAX_VALUE))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -688,7 +716,7 @@ public class Menu extends javax.swing.JFrame {
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel16)
                     .addComponent(odparWodaResult, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(48, Short.MAX_VALUE))
+                .addContainerGap(70, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("woda odpar", jPanel7);
@@ -772,7 +800,7 @@ public class Menu extends javax.swing.JFrame {
                     .addComponent(objetosc)
                     .addComponent(wydajnosc1)
                     .addComponent(czasResult))
-                .addContainerGap(90, Short.MAX_VALUE))
+                .addContainerGap(132, Short.MAX_VALUE))
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -806,7 +834,7 @@ public class Menu extends javax.swing.JFrame {
                     .addGroup(jPanel8Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(czasResult, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(12, Short.MAX_VALUE))
+                .addContainerGap(34, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("czas Grzania", jPanel8);
@@ -849,12 +877,12 @@ public class Menu extends javax.swing.JFrame {
                     .addComponent(obliczEnergie)
                     .addComponent(jLabel5)
                     .addComponent(jLabel4))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 61, Short.MAX_VALUE)
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(moc2, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
                     .addComponent(czas2)
                     .addComponent(energiaResult))
-                .addContainerGap(54, Short.MAX_VALUE))
+                .addContainerGap(75, Short.MAX_VALUE))
         );
         jPanel9Layout.setVerticalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -873,7 +901,7 @@ public class Menu extends javax.swing.JFrame {
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
                     .addComponent(energiaResult, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(75, Short.MAX_VALUE))
+                .addContainerGap(97, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("energia", jPanel9);
@@ -882,254 +910,271 @@ public class Menu extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 358, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jTabbedPane1)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 11, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 285, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void obliczPasteryzacjeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_obliczPasteryzacjeActionPerformed
-        // TODO add your handling code here:
+        wynikPaster = (int) pow(( czasPas * 1.393),(tempPas - 60));
+        System.out.println("" + wynikPaster);
+        jednPasteryzacjiResult.setText("" + wynikPaster);
     }//GEN-LAST:event_obliczPasteryzacjeActionPerformed
 
     private void obliczEnergieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_obliczEnergieActionPerformed
-        // TODO add your handling code here:
+        wynikEnergia = (int) ((md *c2)/1000);
+        System.out.println("" + wynikEnergia);
+        energiaResult.setText("" + wynikEnergia);
+        //zmienic wynik z int na double??
     }//GEN-LAST:event_obliczEnergieActionPerformed
 
     private void obliczCzasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_obliczCzasActionPerformed
-        // TODO add your handling code here:
+        wynikCzas = (int) (((tk-tp)* ob *1.16 * 60) /(m1 * w1));       
+        System.out.println("" + wynikCzas);
+        czasResult.setText("" + wynikCzas);
+        //zmienic wynik z int na double??
     }//GEN-LAST:event_obliczCzasActionPerformed
 
     private void obliczWydajnoscZacieruActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_obliczWydajnoscZacieruActionPerformed
-        // TODO add your handling code here:
+        wynikWydajnoscZacieru = (int) ((e1/et)*100);
+        System.out.println("" + wynikWydajnoscZacieru);
+        wydajnoscZacieruResult.setText("" + wynikWydajnoscZacieru);
     }//GEN-LAST:event_obliczWydajnoscZacieruActionPerformed
 
     private void obliczWydajnoscWarzelniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_obliczWydajnoscWarzelniActionPerformed
-        // TODO add your handling code here:
+        wynikWydajnoscWarzelni = (e/z);
+        System.out.println("" + wynikWydajnoscWarzelni);
+        wydajnoscWarzelniResult.setText("" + wynikWydajnoscWarzelni);
     }//GEN-LAST:event_obliczWydajnoscWarzelniActionPerformed
 
     private void obliczWodeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_obliczWodeActionPerformed
-        // TODO add your handling code here:
+        wynikWoda = ((M*w*c)/626);
+        System.out.println("" + wynikWoda);
+        odparWodaResult.setText("" + wynikWoda);
     }//GEN-LAST:event_obliczWodeActionPerformed
 
     private void obliczIBUActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_obliczIBUActionPerformed
-     wynikIbu = ((m * a * u)/(v * 10));
+        wynikIbu = ((m * a * u)/(v * 10));
         System.out.println("" + wynikIbu);
         ibuResult.setText("" + wynikIbu);
    
     }//GEN-LAST:event_obliczIBUActionPerformed
 
     private void masaChmieluActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_masaChmieluActionPerformed
-      String mc = masaChmielu.getText();
+       String mc = masaChmielu.getText();
        System.out.println(mc);     
        m = Double.parseDouble(mc);
     }//GEN-LAST:event_masaChmieluActionPerformed
 
     private void alfaKwasyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alfaKwasyActionPerformed
-        String ak = alfaKwasy.getText();
+       String ak = alfaKwasy.getText();
        System.out.println(ak); 
        a = Double.parseDouble(ak);
     }//GEN-LAST:event_alfaKwasyActionPerformed
 
     private void utylizacjaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_utylizacjaActionPerformed
-      String ut = utylizacja.getText();
+       String ut = utylizacja.getText();
        System.out.println(ut);
        u = Double.parseDouble(ut);
     }//GEN-LAST:event_utylizacjaActionPerformed
 
     private void objBrzeczkiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_objBrzeczkiActionPerformed
-        String obj = objBrzeczki.getText();
+       String obj = objBrzeczki.getText();
        System.out.println(obj);
        v = Double.parseDouble(obj);
     }//GEN-LAST:event_objBrzeczkiActionPerformed
 
     private void ibuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ibuActionPerformed
-        String i = ibu.getText();
-       System.out.println(i);
-      
+       String i = ibu.getText();
+       System.out.println(i);      
        ib = Double.parseDouble(i);
     }//GEN-LAST:event_ibuActionPerformed
 
     private void objBrzeczki1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_objBrzeczki1ActionPerformed
        String obj1 = objBrzeczki1.getText();
-       System.out.println(obj1);
-     
+       System.out.println(obj1);     
        o1 = Double.parseDouble(obj1);
     }//GEN-LAST:event_objBrzeczki1ActionPerformed
 
     private void alfaKwasy1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alfaKwasy1ActionPerformed
-      String ak1 = alfaKwasy1.getText();
-       System.out.println(ak1);
-      
+       String ak1 = alfaKwasy1.getText();
+       System.out.println(ak1);      
        a1 = Double.parseDouble(ak1);
     }//GEN-LAST:event_alfaKwasy1ActionPerformed
 
     private void utylizacja1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_utylizacja1ActionPerformed
        String ut1 = utylizacja1.getText();
-       System.out.println(ut1);
-      
+       System.out.println(ut1);      
        u1 = Double.parseDouble(ut1);
     }//GEN-LAST:event_utylizacja1ActionPerformed
 
     private void ekstraktActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ekstraktActionPerformed
-         String ekstr = ekstrakt.getText();
-       System.out.println(ekstr);
-      
+       String ekstr = ekstrakt.getText();
+       System.out.println(ekstr);      
        e = Double.parseDouble(ekstr);
     }//GEN-LAST:event_ekstraktActionPerformed
 
     private void zasypActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_zasypActionPerformed
-        String zas = zasyp.getText();
-       System.out.println(zas);
-      
+       String zas = zasyp.getText();
+       System.out.println(zas);      
        z = Double.parseDouble(zas);
     }//GEN-LAST:event_zasypActionPerformed
 
     private void ekstrakt1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ekstrakt1ActionPerformed
-         String ekstr1 = ekstrakt1.getText();
-       System.out.println(ekstr1);
-      
+        String ekstr1 = ekstrakt1.getText();
+       System.out.println(ekstr1);      
        e1 = Double.parseDouble(ekstr1);
     }//GEN-LAST:event_ekstrakt1ActionPerformed
 
     private void ekstraktTeorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ekstraktTeorActionPerformed
-        String ekstrTeor = ekstraktTeor.getText();
-       System.out.println(ekstrTeor);
-      
+       String ekstrTeor = ekstraktTeor.getText();
+       System.out.println(ekstrTeor);      
        et = Double.parseDouble(ekstrTeor);
     }//GEN-LAST:event_ekstraktTeorActionPerformed
 
     private void blgPoczActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_blgPoczActionPerformed
-        String blgPoc = blgPocz.getText();
-       System.out.println(blgPoc);
-      
-       blgP = Double.parseDouble(blgPoc);
+       String blgPoc = blgPocz.getText();
+       System.out.println(blgPoc);      
+       blgP =  Double.parseDouble(blgPoc);
     }//GEN-LAST:event_blgPoczActionPerformed
 
     private void blgKoncActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_blgKoncActionPerformed
        String blgKon = blgKonc.getText();
-       System.out.println(blgKon);
-       
-       blgK = Double.parseDouble(blgKon);
+       System.out.println(blgKon);       
+       blgK =  Double.parseDouble(blgKon);
     }//GEN-LAST:event_blgKoncActionPerformed
 
     private void czasPasteryzacjiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_czasPasteryzacjiActionPerformed
-        String czasPast = czasPasteryzacji.getText();
-       System.out.println(czasPast);
-      
+       String czasPast = czasPasteryzacji.getText();
+       System.out.println(czasPast);      
        czasPas = Double.parseDouble(czasPast);
     }//GEN-LAST:event_czasPasteryzacjiActionPerformed
 
     private void temperaturaPasteryzacjiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_temperaturaPasteryzacjiActionPerformed
-        String tempPast = temperaturaPasteryzacji.getText();
-       System.out.println(tempPast);
-      
+       String tempPast = temperaturaPasteryzacji.getText();
+       System.out.println(tempPast);      
        tempPas = Double.parseDouble(tempPast);
+       if (tempPas < 60){
+       System.out.println("Za niska wartosc temperatury");
+       this.dispose();
+       //dodac komunikat błędu dla tej czynnosci
+       }
     }//GEN-LAST:event_temperaturaPasteryzacjiActionPerformed
 
     private void moc2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_moc2ActionPerformed
        String mocDwa = moc2.getText();
-       System.out.println(mocDwa);
-      
+       System.out.println(mocDwa);      
        md = Double.parseDouble(mocDwa);
     }//GEN-LAST:event_moc2ActionPerformed
 
     private void czas2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_czas2ActionPerformed
-        String cz2 = czas2.getText();
-       System.out.println(cz2);
-     
+       String cz2 = czas2.getText();
+       System.out.println(cz2);     
        c2 = Double.parseDouble(cz2);
     }//GEN-LAST:event_czas2ActionPerformed
 
     private void tempPoczActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tempPoczActionPerformed
-        String tempP = tempPocz.getText();
-       System.out.println(tempP);
-      
+       String tempP = tempPocz.getText();
+       System.out.println(tempP);      
        tp = Double.parseDouble(tempP);
     }//GEN-LAST:event_tempPoczActionPerformed
 
     private void tempKoncActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tempKoncActionPerformed
-        String tempK = tempKonc.getText();
-       System.out.println(tempK);
-       
+       String tempK = tempKonc.getText();
+       System.out.println(tempK);       
        tk = Double.parseDouble(tempK);
     }//GEN-LAST:event_tempKoncActionPerformed
 
     private void objetoscActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_objetoscActionPerformed
-         String obj = objetosc.getText();
-       System.out.println(obj);
-      
+       String obj = objetosc.getText();
+       System.out.println(obj);      
        ob = Double.parseDouble(obj);
     }//GEN-LAST:event_objetoscActionPerformed
 
     private void moc1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_moc1ActionPerformed
        String mocJeden = moc1.getText();
-       System.out.println(mocJeden);
-      
+       System.out.println(mocJeden);      
        m1 = Double.parseDouble(mocJeden);
     }//GEN-LAST:event_moc1ActionPerformed
 
     private void wydajnosc1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_wydajnosc1ActionPerformed
-        String wyd1 = wydajnosc1.getText();
-       System.out.println(wyd1);
-      
+       String wyd1 = wydajnosc1.getText();
+       System.out.println(wyd1);      
        w1 = Double.parseDouble(wyd1);
     }//GEN-LAST:event_wydajnosc1ActionPerformed
 
     private void MocActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MocActionPerformed
-         String MocString = Moc.getText();
-       System.out.println(MocString);
-      
+       String MocString = Moc.getText();
+       System.out.println(MocString);      
        M = Double.parseDouble(MocString);
     }//GEN-LAST:event_MocActionPerformed
 
     private void wydajnoscActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_wydajnoscActionPerformed
-        String wyd = wydajnosc.getText();
-       System.out.println(wyd);
-      
+       String wyd = wydajnosc.getText();
+       System.out.println(wyd);      
        w = Double.parseDouble(wyd);
     }//GEN-LAST:event_wydajnoscActionPerformed
 
     private void czasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_czasActionPerformed
        String cz = czas.getText();
-       System.out.println(cz);
-      
+       System.out.println(cz);      
        c = Double.parseDouble(cz);
     }//GEN-LAST:event_czasActionPerformed
 
     private void czasResultActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_czasResultActionPerformed
-       
-      
+       //This does nothing      
     }//GEN-LAST:event_czasResultActionPerformed
 
     private void jednPasteryzacjiResultActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jednPasteryzacjiResultActionPerformed
-       
+       //This does nothing
     }//GEN-LAST:event_jednPasteryzacjiResultActionPerformed
 
     private void odparWodaResultActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_odparWodaResultActionPerformed
-       
+       //This does nothing
     }//GEN-LAST:event_odparWodaResultActionPerformed
 
     private void ibuResultActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ibuResultActionPerformed
-       
+       //This does nothing
     }//GEN-LAST:event_ibuResultActionPerformed
 
     private void obliczChmielActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_obliczChmielActionPerformed
-        
-       
+        wynikChmiel = (ib * o1 * 10) /( a1 * u1);
+        System.out.println("" + wynikChmiel);
+        ChmielResult.setText("" + wynikChmiel);
     }//GEN-LAST:event_obliczChmielActionPerformed
 
     private void ChmielResultActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChmielResultActionPerformed
-      
+      //This does nothing
     }//GEN-LAST:event_ChmielResultActionPerformed
+
+    private void wydajnoscWarzelniResultActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_wydajnoscWarzelniResultActionPerformed
+        // This does nothing:
+    }//GEN-LAST:event_wydajnoscWarzelniResultActionPerformed
+
+    private void wydajnoscZacieruResultActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_wydajnoscZacieruResultActionPerformed
+        // This does nothing:
+    }//GEN-LAST:event_wydajnoscZacieruResultActionPerformed
+
+    private void obliczOdfermentowanieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_obliczOdfermentowanieActionPerformed
+        wynikOdfermentowanie = (int) ( 100*( (blgP - blgK)/blgP ) );
+        System.out.println("" + wynikOdfermentowanie);
+        odfermResult.setText("" + wynikOdfermentowanie);
+    }//GEN-LAST:event_obliczOdfermentowanieActionPerformed
+
+    private void odfermResultActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_odfermResultActionPerformed
+        // This does nothing:
+    }//GEN-LAST:event_odfermResultActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1166,12 +1211,14 @@ public class Menu extends javax.swing.JFrame {
             }
         });
     }
-    private double m, a, u, v, wynikIbu, c, wM, w1, m1, ob, tk, tp, c2, md, tempPas,
-                   w, M, czasPas, blgK, blgP, et, e1, e, u1,a1, o1,ib, z;
+    private double m, a, u, v, wynikIbu, wynikChmiel,  c, wM, w1, m1, ob, tk, 
+                   tp, c2, md, tempPas, w, M, czasPas,  et, e1, e, 
+                   u1,a1, o1,ib, z, wynikWydajnoscWarzelni,
+                    wynikWoda, blgK, blgP;
+    private int wynikOdfermentowanie, wynikPaster, wynikWydajnoscZacieru, wynikEnergia, wynikCzas ;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField ChmielResult;
     private javax.swing.JTextField Moc;
-    private javax.swing.JTextField OdfermResult;
     private javax.swing.JTextField alfaKwasy;
     private javax.swing.JTextField alfaKwasy1;
     private javax.swing.JTextField blgKonc;
@@ -1247,6 +1294,7 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JButton obliczWode;
     private javax.swing.JButton obliczWydajnoscWarzelni;
     private javax.swing.JButton obliczWydajnoscZacieru;
+    private javax.swing.JTextField odfermResult;
     private javax.swing.JTextField odparWodaResult;
     private javax.swing.JTextField tempKonc;
     private javax.swing.JTextField tempPocz;
