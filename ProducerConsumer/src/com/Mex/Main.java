@@ -13,14 +13,14 @@ public class Main {
 public static final String EOF = "EOF";
 
     public static void main(String[] args) {
-        List<String> buffer = new ArrayList<String>();
-        ReentrantLock bufferLock = new ReentrantLock();
+       ArrayBlockingQueue<String> buffer = new ArrayBlockingQueue<String>(6);
+
 
         ExecutorService executorService = Executors.newFixedThreadPool(3);
 
-        MyProducer producer = new MyProducer(buffer, bufferLock);
-        MyConsumer consumer1 = new MyConsumer(buffer, bufferLock);
-        MyConsumer consumer2 = new MyConsumer(buffer, bufferLock);
+        MyProducer producer = new MyProducer(buffer);
+        MyConsumer consumer1 = new MyConsumer(buffer);
+        MyConsumer consumer2 = new MyConsumer(buffer);
 
         executorService.execute(producer);
         executorService.execute(consumer1);
@@ -50,12 +50,12 @@ public static final String EOF = "EOF";
 }
 
 class MyProducer implements Runnable {
-    private List<String> buffer;
-    private ReentrantLock bufferLock;
+    private ArrayBlockingQueue<String> buffer;
 
-    public MyProducer(List<String> buffer, ReentrantLock bufferLock) {
+
+    public MyProducer(ArrayBlockingQueue<String> buffer) {
         this.buffer = buffer;
-        this.bufferLock = bufferLock;
+
     }
 
     public void run(){
@@ -65,12 +65,7 @@ class MyProducer implements Runnable {
         for(String num: nums){
             try {
                 System.out.println("adding " + num);
-                bufferLock.lock();
-                try{
-                    buffer.add(num);
-                }finally {
-                    bufferLock.unlock();
-                }
+                buffer.put(num);
 
 
                 Thread.sleep(random.nextInt(1000));
@@ -80,42 +75,44 @@ class MyProducer implements Runnable {
             }
         }
         System.out.println("adding EOF, exiting");
-        bufferLock.lock();
+
         try {
-            buffer.add("End of File");
-        }finally {
-            bufferLock.unlock();
+            buffer.put("End of File");
+        }catch(InterruptedException e){
+            System.out.println("error");
         }
 
     }
 }
 
 class MyConsumer implements Runnable{
-    private List<String> buffer;
-    private ReentrantLock bufferLock;
+    private ArrayBlockingQueue<String> buffer;
 
-    public MyConsumer(List<String> buffer, ReentrantLock bufferLock) {
+
+    public MyConsumer(ArrayBlockingQueue<String> buffer) {
         this.buffer = buffer;
-        this.bufferLock = bufferLock;
+
     }
 
     public void run(){
         while(true){
-            bufferLock.lock();
-            try{
-                if(buffer.isEmpty()){
-                    continue;
-                }
-                if(buffer.get(0).equals(EOF)){
-                    System.out.println("Exiting");
-                    break;
-                }else{
-                    System.out.println("Removed " + buffer.remove(0));
-                }
+            synchronized (buffer){
+                try{
+                    if(buffer.isEmpty()){
+                        continue;
+                    }
+                    if(buffer.peek().equals(EOF)){
+                        System.out.println("Exiting");
+                        break;
+                    }else{
+                        System.out.println("Removed " + buffer.take());
+                    }
 
-            }finally {
-                bufferLock.unlock();
+                }catch (InterruptedException e){
+
+                }
             }
+
 
         }
     }
