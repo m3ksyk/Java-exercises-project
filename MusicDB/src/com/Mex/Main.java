@@ -2,6 +2,7 @@ package com.Mex;
 
 import com.Mex.model.Artist;
 import com.Mex.model.Datasource;
+import com.Mex.model.SongArtist;
 
 import java.util.List;
 
@@ -23,12 +24,26 @@ public class Main {
             System.out.println("ID : " + artist.getId() + " Name : " + artist.getName());
         }
 
-//        List<String> albumsForArtists = datasource.queryAlbumsForArtists("Pink Floyd", Datasource.ORDER_BY_ASC);
-//        for(String album : albumsForArtists){
-//            System.out.println(album);
-//        }
+        List<String> albumsForArtists = datasource.queryAlbumsForArtists("Pink Floyd", Datasource.ORDER_BY_ASC);
+        for(String album : albumsForArtists){
+            System.out.println(album);
+        }
 
 
+        List<SongArtist> songArtists = datasource.queryArtistForSong("Stormbringer", Datasource.ORDER_BY_ASC);
+        if(songArtists == null){
+            System.out.println("no artist for the song");
+            return;
+        }
+        for (SongArtist artist : songArtists){
+            System.out.println("Name: " + artist.getArtistName() +
+            " Album: " + artist.getAlbumName() +
+            " Track: " + artist.getTrack());
+        }
+
+
+
+        datasource.querySongsMetaData();
 
 
 
