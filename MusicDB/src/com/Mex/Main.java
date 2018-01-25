@@ -5,6 +5,7 @@ import com.Mex.model.Datasource;
 import com.Mex.model.SongArtist;
 
 import java.util.List;
+import java.util.Scanner;
 
 public class Main {
 
@@ -45,7 +46,28 @@ public class Main {
 
         datasource.querySongsMetaData();
 
+        int count = datasource.getCount(Datasource.TABLE_SONGS);
+        System.out.println("Number of songs " + count);
 
+        datasource.createViewForSongArtists();
+
+//        Scanner scanner = new Scanner(System.in);
+//        System.out.println("Enter song title: ");
+//        String title = scanner.nextLine();
+//
+//        songArtists = datasource.querySongInfoView(title);
+//        if(songArtists.isEmpty()){
+//            System.out.println("no artist for given song");
+//            return;
+//        }
+//        for(SongArtist artist : songArtists){
+//            System.out.println("VIEW: Artist name: " + artist.getArtistName() + " Album: " + artist.getAlbumName() +
+//            " Track: " + artist.getTrack());
+//        }
+
+
+
+        datasource.insertSong("Bombtrack", "RATM", "Rage Against the Machine", 1);
 
         datasource.close();
     }
