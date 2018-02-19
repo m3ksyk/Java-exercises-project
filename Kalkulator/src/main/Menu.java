@@ -5,15 +5,15 @@
  */
 package main;
 
-import java.util.InputMismatchException;
 import javax.swing.*;
 import static java.lang.Double.valueOf;
-import static java.lang.Math.pow;
 
 /**
  * @author M3ksyk (m3ksyk@gmail.com)
  */
 public class Menu extends javax.swing.JFrame {
+
+    private final Controller controller = new Controller(this);
 
     /**
      * Creates new form Menu
@@ -28,155 +28,112 @@ public class Menu extends javax.swing.JFrame {
      */
     public double getFieldValue(JTextField field) {
 
-        Double val = null;
-        try {
-            if (valueOf(field.getText()) >= 0) {
-                val = valueOf(field.getText());
-                System.out.println(val);
-            } else if (field.getText().isEmpty()) {
-                System.out.println("No value entered. Please enter value in the field.");
-                //add an alert here
-            } else {
-                System.out.println("Value cannot be lower than 0");
-                //add an alert or something
-            }
-
-        } catch (InputMismatchException exc) {
-            System.out.println("Wrong input. Use numbers only.");
-            exc.getMessage();
-        }
-        return val;
+        return controller.getFieldValue(field);
     }
 
     public double getHopMass() {
-        //return hopMass = valueOf(masaChmielu.getText());
-        return this.getFieldValue(masaChmielu);
+        return controller.getFieldValue(masaChmielu);
     }
 
     public double getPasteurizationTime() {
-       // return pasteurizationTime = valueOf(czasPasteryzacji.getText());
-        return this.getFieldValue(czasPasteryzacji);
+        return controller.getFieldValue(czasPasteryzacji);
     }
 
     public double getTheorExtract() {
-        //return theorExtract = valueOf(ekstraktTeor.getText());
-        return this.getFieldValue(ekstraktTeor);
+        return controller.getFieldValue(ekstraktTeor);
     }
 
 
     public double getPractExtract() {
-        //return PractExtract = valueOf(ekstrakt1.getText());
-        return this.getFieldValue(ekstrakt1);
+        return controller.getFieldValue(ekstrakt1);
     }
 
     public double getExtract() {
-        //return extract = valueOf(ekstrakt.getText());
-        return this.getFieldValue(ekstrakt);
+        return controller.getFieldValue(ekstrakt);
     }
 
     public double getUtilization1() {
-        //return utilization1 = valueOf(utylizacja1.getText());
-        return this.getFieldValue(utylizacja1);
+        return controller.getFieldValue(utylizacja1);
     }
 
     public double getAlphaAcids1() {
-//        return alphaAcids1 = valueOf(alfaKwasy1.getText());
-        return this.getFieldValue(alfaKwasy1);
+        return controller.getFieldValue(alfaKwasy1);
     }
 
     public double getWortVolume1() {
-      //  return wortVolume1 = valueOf(objBrzeczki1.getText());
-        return this.getFieldValue(objBrzeczki1);
+        return controller.getFieldValue(objBrzeczki1);
     }
 
     public double getIb() {
-        //return ib = valueOf(ibu.getText());
-        return this.getFieldValue(ibu);
+        return controller.getFieldValue(ibu);
     }
 
     public double getMaltMass() {
-//        return maltMass = valueOf(zasyp.getText());
-    return this.getFieldValue(zasyp);
+    return controller.getFieldValue(zasyp);
     }
 
     public double getBlgK() {
-//        return blgK = valueOf(blgKonc.getText());
-    return this.getFieldValue(blgKonc);
+    return controller.getFieldValue(blgKonc);
     }
 
     public double getBlgP() {
-        //return blgP = valueOf(blgPocz.getText());
-        return this.getFieldValue(blgPocz);
+        return controller.getFieldValue(blgPocz);
     }
 
     public double getAlphaAcids() {
-//        return alphaAcids = valueOf(alfaKwasy.getText());
-    return this.getFieldValue(alfaKwasy);
+    return controller.getFieldValue(alfaKwasy);
     }
 
     public double getUtilization() {
-//        return utilization = valueOf(utylizacja.getText());
-    return this.getFieldValue(utylizacja);
+    return controller.getFieldValue(utylizacja);
     }
 
     public double getWortVolume() {
-        //return wortVolume = valueOf(objBrzeczki.getText());
-        return this.getFieldValue(objBrzeczki);
+        return controller.getFieldValue(objBrzeczki);
     }
 
     public double getTime() {
-        //return time = valueOf(czas.getText());
-        return this.getFieldValue(czas);
+        return controller.getFieldValue(czas);
     }
-// FIND IT!!
+
     public double getPower() {
-        return this.getFieldValue(Moc);
+        return controller.getFieldValue(Moc);
     }
 
     public double getEfficiency1() {
-//        return efficiency1 = valueOf(wydajnosc1.getText());
-    return this.getFieldValue(wydajnosc1);
+        return controller.getFieldValue(wydajnosc1);
     }
 
     public double getPower1() {
-//        return power1 = valueOf(moc1.getText());
-    return this.getFieldValue(moc1);
+    return controller.getFieldValue(moc1);
     }
 
     public double getVolume() {
-//        return volume = valueOf(objetosc.getText());
-    return this.getFieldValue(objetosc);
+    return controller.getFieldValue(objetosc);
     }
 
-
     public double getTk() {
-        //return tk = valueOf(tempKonc.getText());
-        return this.getFieldValue(tempKonc);
+        return controller.getFieldValue(tempKonc);
     }
 
     public double getTp() {
-       // return tp = valueOf(tempPocz.getText());
-        return this.getFieldValue(tempPocz);
+        return controller.getFieldValue(tempPocz);
     }
 
     public double getTime2() {
-//        return time2 = valueOf(czas2.getText());
-    return this.getFieldValue(czas2);
+    return controller.getFieldValue(czas2);
     }
 
     public double getPower2() {
-//        return power2 = valueOf(moc2.getText());
-    return this.getFieldValue(moc2);
+    return controller.getFieldValue(moc2);
     }
 
     public double getTempPas() {
-//        return tempPas = valueOf(temperaturaPasteryzacji.getText());
-        return this.getFieldValue(temperaturaPasteryzacji);
+        return controller.getFieldValue(temperaturaPasteryzacji);
     }
 
     public double getEfficiency() {
-//        return efficiency = valueOf(wydajnosc.getText());
-    return this.getFieldValue(wydajnosc);
+    return controller.getFieldValue(wydajnosc);
     }
 
     /**
@@ -292,38 +249,10 @@ public class Menu extends javax.swing.JFrame {
         jLabel34.setText("V brzeczki [L]");
 
         calculateIBUButton.setText("Oblicz");
-//        calculateIBUButton.addActionListener(new java.awt.event.ActionListener() {
-//            public void actionPerformed(java.awt.event.ActionEvent evt) {
-//                obliczIBUActionPerformed(evt);
-//            }
-//        });
 
         jLabel35.setText("IBU");
 
         masaChmielu.setName("masaChmielu");
-//        masaChmielu.addActionListener(new java.awt.event.ActionListener() {
-//            public void actionPerformed(java.awt.event.ActionEvent evt) {
-//                masaChmieluActionPerformed(evt);
-//            }
-//        });
-
-//        alfaKwasy.addActionListener(new java.awt.event.ActionListener() {
-//            public void actionPerformed(java.awt.event.ActionEvent evt) {
-//                alfaKwasyActionPerformed(evt);
-//            }
-//        });
-//
-//        utylizacja.addActionListener(new java.awt.event.ActionListener() {
-//            public void actionPerformed(java.awt.event.ActionEvent evt) {
-//                utylizacjaActionPerformed(evt);
-//            }
-//        });
-
-//        objBrzeczki.addActionListener(new java.awt.event.ActionListener() {
-//            public void actionPerformed(java.awt.event.ActionEvent evt) {
-//                objBrzeczkiActionPerformed(evt);
-//            }
-//        });
 
         ibuResultField.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
 
@@ -395,36 +324,11 @@ public class Menu extends javax.swing.JFrame {
         obliczChmiel.setText("Oblicz");
         obliczChmiel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                obliczChmielActionPerformed(evt);
+                controller.obliczChmielActionPerformed(evt);
             }
         });
 
         jLabel30.setText("ilosc chmielu [g]");
-
-//        ibu.addActionListener(new java.awt.event.ActionListener() {
-//            public void actionPerformed(java.awt.event.ActionEvent evt) {
-//                ibuActionPerformed(evt);
-//            }
-//        });
-//
-//        objBrzeczki1.addActionListener(new java.awt.event.ActionListener() {
-//            public void actionPerformed(java.awt.event.ActionEvent evt) {
-//                objBrzeczki1ActionPerformed(evt);
-//            }
-//        });
-//
-//        alfaKwasy1.addActionListener(new java.awt.event.ActionListener() {
-//            public void actionPerformed(java.awt.event.ActionEvent evt) {
-//                alfaKwasy1ActionPerformed(evt);
-//            }
-//        });
-//
-//        utylizacja1.addActionListener(new java.awt.event.ActionListener() {
-//            public void actionPerformed(java.awt.event.ActionEvent evt) {
-//                utylizacja1ActionPerformed(evt);
-//            }
-//        });
-
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -487,25 +391,13 @@ public class Menu extends javax.swing.JFrame {
 
         jLabel3.setText("Jednostki pasteryzacja");
 
-//        czasPasteryzacji.addActionListener(new java.awt.event.ActionListener() {
-//            public void actionPerformed(java.awt.event.ActionEvent evt) {
-//                czasPasteryzacjiActionPerformed(evt);
-//            }
-//        });
-//
-//        temperaturaPasteryzacji.addActionListener(new java.awt.event.ActionListener() {
-//            public void actionPerformed(java.awt.event.ActionEvent evt) {
-//                temperaturaPasteryzacjiActionPerformed(evt);
-//            }
-//        });
-
         pasteurizationResultField.setMaximumSize(new java.awt.Dimension(214, 2147483647));
 
 
         obliczPasteryzacje.setText("Oblicz");
         obliczPasteryzacje.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                obliczPasteryzacjeActionPerformed(evt);
+                controller.obliczPasteryzacjeActionPerformed(evt);
             }
         });
 
@@ -558,24 +450,11 @@ public class Menu extends javax.swing.JFrame {
         obliczWydajnoscWarzelni.setText("Oblicz");
         obliczWydajnoscWarzelni.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                obliczWydajnoscWarzelniActionPerformed(evt);
+                controller.obliczWydajnoscWarzelniActionPerformed(evt);
             }
         });
 
         jLabel25.setText("wydajnosc");
-
-
-//        zasyp.addActionListener(new java.awt.event.ActionListener() {
-//            public void actionPerformed(java.awt.event.ActionEvent evt) {
-//                zasypActionPerformed(evt);
-//            }
-//        });
-//
-//        ekstrakt.addActionListener(new java.awt.event.ActionListener() {
-//            public void actionPerformed(java.awt.event.ActionEvent evt) {
-//                ekstraktActionPerformed(evt);
-//            }
-//        });
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -628,22 +507,9 @@ public class Menu extends javax.swing.JFrame {
         obliczWydajnoscZacieru.setText("Oblicz");
         obliczWydajnoscZacieru.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                obliczWydajnoscZacieruActionPerformed(evt);
+                controller.obliczWydajnoscZacieruActionPerformed(evt);
             }
         });
-
-//        ekstrakt1.addActionListener(new java.awt.event.ActionListener() {
-//            public void actionPerformed(java.awt.event.ActionEvent evt) {
-//                ekstrakt1ActionPerformed(evt);
-//            }
-//        });
-//
-//        ekstraktTeor.addActionListener(new java.awt.event.ActionListener() {
-//            public void actionPerformed(java.awt.event.ActionEvent evt) {
-//                ekstraktTeorActionPerformed(evt);
-//            }
-//        });
-
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -703,21 +569,9 @@ public class Menu extends javax.swing.JFrame {
         obliczOdfermentowanie.setText("Oblicz");
         obliczOdfermentowanie.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                calculateAttenuationActionPerformed(evt);
+                controller.calculateAttenuationActionPerformed(evt);
             }
         });
-
-//        blgKonc.addActionListener(new java.awt.event.ActionListener() {
-//            public void actionPerformed(java.awt.event.ActionEvent evt) {
-//                blgKoncActionPerformed(evt);
-//            }
-//        });
-//
-//        blgPocz.addActionListener(new java.awt.event.ActionListener() {
-//            public void actionPerformed(java.awt.event.ActionEvent evt) {
-//                blgPoczActionPerformed(evt);
-//            }
-//        });
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -774,29 +628,11 @@ public class Menu extends javax.swing.JFrame {
         obliczWode.setText("Oblicz");
         obliczWode.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                obliczWodeActionPerformed(evt);
+                controller.obliczWodeActionPerformed(evt);
             }
         });
 
         jLabel16.setText("odparowana woda [L]");
-
-//        Moc.addActionListener(new java.awt.event.ActionListener() {
-//            public void actionPerformed(java.awt.event.ActionEvent evt) {
-//                MocActionPerformed(evt);
-//            }
-//        });
-//
-//        wydajnosc.addActionListener(new java.awt.event.ActionListener() {
-//            public void actionPerformed(java.awt.event.ActionEvent evt) {
-//                wydajnoscActionPerformed(evt);
-//            }
-//        });
-//
-//        czas.addActionListener(new java.awt.event.ActionListener() {
-//            public void actionPerformed(java.awt.event.ActionEvent evt) {
-//                czasActionPerformed(evt);
-//            }
-//        });
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
@@ -862,39 +698,9 @@ public class Menu extends javax.swing.JFrame {
         obliczCzas.setText("Oblicz");
         obliczCzas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                obliczCzasActionPerformed(evt);
+                controller.obliczCzasActionPerformed(evt);
             }
         });
-
-//        tempPocz.addActionListener(new java.awt.event.ActionListener() {
-//            public void actionPerformed(java.awt.event.ActionEvent evt) {
-//                tempPoczActionPerformed(evt);
-//            }
-//        });
-//
-//        tempKonc.addActionListener(new java.awt.event.ActionListener() {
-//            public void actionPerformed(java.awt.event.ActionEvent evt) {
-//                tempKoncActionPerformed(evt);
-//            }
-//        });
-//
-//        objetosc.addActionListener(new java.awt.event.ActionListener() {
-//            public void actionPerformed(java.awt.event.ActionEvent evt) {
-//                objetoscActionPerformed(evt);
-//            }
-//        });
-//
-//        moc1.addActionListener(new java.awt.event.ActionListener() {
-//            public void actionPerformed(java.awt.event.ActionEvent evt) {
-//                moc1ActionPerformed(evt);
-//            }
-//        });
-//
-//        wydajnosc1.addActionListener(new java.awt.event.ActionListener() {
-//            public void actionPerformed(java.awt.event.ActionEvent evt) {
-//                wydajnosc1ActionPerformed(evt);
-//            }
-//        });
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
@@ -968,21 +774,9 @@ public class Menu extends javax.swing.JFrame {
         obliczEnergie.setText("Oblicz");
         obliczEnergie.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                obliczEnergieActionPerformed(evt);
+                controller.obliczEnergieActionPerformed(evt);
             }
         });
-
-//        moc2.addActionListener(new java.awt.event.ActionListener() {
-//            public void actionPerformed(java.awt.event.ActionEvent evt) {
-//                moc2ActionPerformed(evt);
-//            }
-//        });
-//
-//        czas2.addActionListener(new java.awt.event.ActionListener() {
-//            public void actionPerformed(java.awt.event.ActionEvent evt) {
-//                czas2ActionPerformed(evt);
-//            }
-//        });
 
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);
@@ -1044,236 +838,39 @@ public class Menu extends javax.swing.JFrame {
     }
 
     private void obliczPasteryzacjeActionPerformed(java.awt.event.ActionEvent evt) {
-        if(getTempPas() > 60) {
-            pasteurizationResult = (int) pow((getPasteurizationTime() * 1.393), (getTempPas() - 60));
-            System.out.println("" + pasteurizationResult);
-            pasteurizationResultField.setText("" + pasteurizationResult);
-        }else{
-            System.out.println("Za niska temperatura. Podaj wartosc powyzej 60 degC");
-            this.dispose();
-        }
+        controller.obliczPasteryzacjeActionPerformed(evt);
     }
 
     private void obliczEnergieActionPerformed(java.awt.event.ActionEvent evt) {
-        energyResult = (int) ((getPower2() * getTime2()) / 1000);
-        System.out.println("" + energyResult);
-        energyResultField.setText("" + energyResult);
+        controller.obliczEnergieActionPerformed(evt);
     }
 
     private void obliczCzasActionPerformed(java.awt.event.ActionEvent evt) {
-        timeResult = (int) (((getTk() - getTp()) * getVolume() * 1.16 * 60) / (getPower1() * getEfficiency1()));
-        System.out.println("" + timeResult);
-        timeResultField.setText("" + timeResult);
-
+        controller.obliczCzasActionPerformed(evt);
     }
 
     private void obliczWydajnoscZacieruActionPerformed(java.awt.event.ActionEvent evt) {
-        mashEfficiencyResult = (int) ((getPractExtract() / getTheorExtract()) * 100);
-        System.out.println("" + mashEfficiencyResult);
-        mashEfficiencyResultField.setText("" + mashEfficiencyResult);
+        controller.obliczWydajnoscZacieruActionPerformed(evt);
     }
 
     private void obliczWydajnoscWarzelniActionPerformed(java.awt.event.ActionEvent evt) {
-        breweryEfficiencyResult = (getExtract() / getMaltMass());
-        System.out.println("" + breweryEfficiencyResult);
-        breweryEfficiencyResultField.setText("" + breweryEfficiencyResult);
+        controller.obliczWydajnoscWarzelniActionPerformed(evt);
     }
 
     private void obliczWodeActionPerformed(java.awt.event.ActionEvent evt) {
-        waterResult = ((getPower() * getEfficiency() * getTime()) / 626);
-        System.out.println("" + waterResult);
-        waterResultField.setText("" + waterResult);
+        controller.obliczWodeActionPerformed(evt);
     }
 
     private void obliczIBUActionPerformed(java.awt.event.ActionEvent evt) {
-        ibuResult = ((getHopMass() * getAlphaAcids() * getUtilization()) / (getWortVolume() * 10));
-        System.out.println("" + ibuResult);
-        ibuResultField.setText("" + ibuResult);
+        controller.obliczIBUActionPerformed(evt);
     }
 
-//    private void masaChmieluActionPerformed(java.awt.event.ActionEvent evt) {
-//        String mc = masaChmielu.getText();
-//        System.out.println(mc);
-//        hopMass = Double.parseDouble(mc);
-//    }
-
-//    private void alfaKwasyActionPerformed(java.awt.event.ActionEvent evt) {
-//        String ak = alfaKwasy.getText();
-//        System.out.println(ak);
-//        alphaAcids = Double.parseDouble(ak);
-//    }
-//
-//    private void utylizacjaActionPerformed(java.awt.event.ActionEvent evt) {
-//        String ut = utylizacja.getText();
-//        System.out.println(ut);
-//        utilization = Double.parseDouble(ut);
-//    }
-//
-//    private void objBrzeczkiActionPerformed(java.awt.event.ActionEvent evt) {
-//        String obj = objBrzeczki.getText();
-//        System.out.println(obj);
-//        wortVolume = Double.parseDouble(obj);
-//    }
-//
-//    private void ibuActionPerformed(java.awt.event.ActionEvent evt) {
-//        String i = ibu.getText();
-//        System.out.println(i);
-//        ib = Double.parseDouble(i);
-//    }
-//
-//    private void objBrzeczki1ActionPerformed(java.awt.event.ActionEvent evt) {
-//        String obj1 = objBrzeczki1.getText();
-//        System.out.println(obj1);
-//        wortVolume1 = Double.parseDouble(obj1);
-//    }
-
-//    private void alfaKwasy1ActionPerformed(java.awt.event.ActionEvent evt) {
-//        String ak1 = alfaKwasy1.getText();
-//        System.out.println(ak1);
-//        alphaAcids1 = Double.parseDouble(ak1);
-//    }
-//
-//    private void utylizacja1ActionPerformed(java.awt.event.ActionEvent evt) {
-//        String ut1 = utylizacja1.getText();
-//        System.out.println(ut1);
-//        utilization1 = Double.parseDouble(ut1);
-//    }
-//
-//    private void ekstraktActionPerformed(java.awt.event.ActionEvent evt) {
-//        String ekstr = ekstrakt.getText();
-//        System.out.println(ekstr);
-//        extract = Double.parseDouble(ekstr);
-//    }
-//
-//    private void zasypActionPerformed(java.awt.event.ActionEvent evt) {
-//        String zas = zasyp.getText();
-//        System.out.println(zas);
-//        maltMass = Double.parseDouble(zas);
-//    }
-
-//    private void ekstrakt1ActionPerformed(java.awt.event.ActionEvent evt) {
-//        String ekstr1 = ekstrakt1.getText();
-//        System.out.println(ekstr1);
-//        practExtract = Double.parseDouble(ekstr1);
-//    }
-//
-//    private void ekstraktTeorActionPerformed(java.awt.event.ActionEvent evt) {
-//        String ekstrTeor = ekstraktTeor.getText();
-//        System.out.println(ekstrTeor);
-//        theorExtract = Double.parseDouble(ekstrTeor);
-//    }
-
-//    private void blgPoczActionPerformed(java.awt.event.ActionEvent evt) {
-////       String blgPoc = blgPocz.getText();
-////       System.out.println(blgPoc);
-////       blgP =  Double.parseDouble(blgPoc);
-//        try {
-//            blgP = valueOf(blgPocz.getText());
-//            System.out.println(blgP);
-//        } catch (InputMismatchException exc) {
-//            System.out.println("Wrong input. Use numbers only.");
-//            exc.getMessage();
-//        }
-//    }
-
-//    private void blgKoncActionPerformed(ActionEvent evt) {
-
-        //  blgKonc.getFieldValue(); //dont work!!
-//       String blgKon = blgKonc.getText();
-//       System.out.println(blgKon);
-//       blgK =  Double.parseDouble(blgKon);
-//    }
-
-//    private void czasPasteryzacjiActionPerformed(java.awt.event.ActionEvent evt) {
-//        String czasPast = czasPasteryzacji.getText();
-//        System.out.println(czasPast);
-//        pasteurizationTime = Double.parseDouble(czasPast);
-//    }
-
-//    private void temperaturaPasteryzacjiActionPerformed(java.awt.event.ActionEvent evt) {
-//        String tempPast = temperaturaPasteryzacji.getText();
-//        System.out.println(tempPast);
-//        tempPas = Double.parseDouble(tempPast);
-//        if (tempPas < 60) {
-//            System.out.println("Za niska wartosc temperatury");
-//            this.dispose();
-//            Alert pasteurAlert = new Alert(Alert.AlertType.WARNING);
-//            pasteurAlert.setContentText("Temperature too low for procees to take place. Input value greater than 60 degC.");
-//            //check if the element works!!
-//        }
-//    }
-
-//    private void moc2ActionPerformed(java.awt.event.ActionEvent evt) {
-//        String mocDwa = moc2.getText();
-//        System.out.println(mocDwa);
-//        power2 = Double.parseDouble(mocDwa);
-//    }
-//
-//    private void czas2ActionPerformed(java.awt.event.ActionEvent evt) {
-//        String cz2 = czas2.getText();
-//        System.out.println(cz2);
-//        time2 = Double.parseDouble(cz2);
-//    }
-//
-//    private void tempPoczActionPerformed(java.awt.event.ActionEvent evt) {
-//        String tempP = tempPocz.getText();
-//        System.out.println(tempP);
-//        tp = Double.parseDouble(tempP);
-//    }
-
-//    private void tempKoncActionPerformed(java.awt.event.ActionEvent evt) {
-//        String tempK = tempKonc.getText();
-//        System.out.println(tempK);
-//        tk = Double.parseDouble(tempK);
-//    }
-
-//    private void objetoscActionPerformed(java.awt.event.ActionEvent evt) {
-//        String obj = objetosc.getText();
-//        System.out.println(obj);
-//        volume = Double.parseDouble(obj);
-//    }
-
-//    private void moc1ActionPerformed(java.awt.event.ActionEvent evt) {
-////       String mocJeden = moc1.getText();
-////       System.out.println(mocJeden);
-////       power1 = Double.parseDouble(mocJeden);
-//      //  this.getPower1();
-//    }
-
-//    private void wydajnosc1ActionPerformed(java.awt.event.ActionEvent evt) {
-//        String wyd1 = wydajnosc1.getText();
-//        System.out.println(wyd1);
-//        efficiency1 = Double.parseDouble(wyd1);
-//    }
-//
-//    private void MocActionPerformed(java.awt.event.ActionEvent evt) {
-//        String MocString = Moc.getText();
-//        System.out.println(MocString);
-//        M = Double.parseDouble(MocString);
-//    }
-
-//    private void wydajnoscActionPerformed(java.awt.event.ActionEvent evt) {
-//        String wyd = wydajnosc.getText();
-//        System.out.println(wyd);
-//        efficiency = Double.parseDouble(wyd);
-//    }
-//
-//    private void czasActionPerformed(java.awt.event.ActionEvent evt) {
-//        String cz = czas.getText();
-//        System.out.println(cz);
-//        time = Double.parseDouble(cz);
-//    }
-
     private void obliczChmielActionPerformed(java.awt.event.ActionEvent evt) {
-        hopResult = (getIb() * getWortVolume1() * 10) / (getAlphaAcids1() * getUtilization1());
-        System.out.println("" + hopResult);
-        hopsResultField.setText("" + hopResult);
+        controller.obliczChmielActionPerformed(evt);
     }
 
     private void calculateAttenuationActionPerformed(java.awt.event.ActionEvent evt) {
-        attenuationResult = (int) (100 * ((getBlgP() - getBlgK()) / getBlgP()));
-        System.out.println("" + attenuationResult);
-        attenuationResultField.setText("" + attenuationResult);
+        controller.calculateAttenuationActionPerformed(evt);
     }
 
     /**
@@ -1281,37 +878,10 @@ public class Menu extends javax.swing.JFrame {
      * @param args the command line arguments
      */
 
-    private double hopMass;
-    private double alphaAcids;
-    private double utilization;
-    private double wortVolume;
     private double ibuResult;
     private double hopResult;
-    private double time;
-    private double power;
-    private double efficiency1;
-    private double power1;
-    private double volume;
-    private double tk;
-    private double tp;
-    private double time2;
-    private double power2;
-    private double tempPas;
-    private double efficiency;
-    private double M;
-    private double pasteurizationTime;
-    private double theorExtract;
-    private double practExtract;
-    private double extract;
-    private double utilization1;
-    private double alphaAcids1;
-    private double wortVolume1;
-    private double ib;
-    private double maltMass;
     private double breweryEfficiencyResult;
     private double waterResult;
-    private double blgK;
-    private double blgP;
     private int attenuationResult;
     private int pasteurizationResult;
     private int mashEfficiencyResult;
@@ -1407,4 +977,112 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JTextField breweryEfficiencyResultField;
     private javax.swing.JTextField mashEfficiencyResultField;
     private javax.swing.JTextField zasyp;
+
+    public int getPasteurizationResult() {
+        return pasteurizationResult;
+    }
+
+    public int getTimeResult() {
+        return timeResult;
+    }
+
+    public JTextField getWaterResultField() {
+        return waterResultField;
+    }
+
+    public JTextField getEnergyResultField() {
+        return energyResultField;
+    }
+
+    public JTextField getAttenuationResultField() {
+        return attenuationResultField;
+    }
+
+    public JTextField getBreweryEfficiencyResultField() {
+        return breweryEfficiencyResultField;
+    }
+
+    public JTextField getIbuResultField() {
+        return ibuResultField;
+    }
+
+    public int getAttenuationResult() {
+        return attenuationResult;
+    }
+
+    public double getWaterResult() {
+        return waterResult;
+    }
+
+    public double getBreweryEfficiencyResult() {
+        return breweryEfficiencyResult;
+    }
+
+    public int getEnergyResult() {
+        return energyResult;
+    }
+
+    public int getMashEfficiencyResult() {
+        return mashEfficiencyResult;
+    }
+
+    public JTextField getMashEfficiencyResultField() {
+        return mashEfficiencyResultField;
+    }
+
+    public double getIbuResult() {
+        return ibuResult;
+    }
+
+    public double getHopResult() {
+        return hopResult;
+    }
+
+    public JTextField getHopsResultField() {
+        return hopsResultField;
+    }
+
+    public JTextField getTimeResultField() {
+        return timeResultField;
+    }
+
+    public void setPasteurizationResult(int pasteurizationResult) {
+        this.pasteurizationResult = pasteurizationResult;
+    }
+
+    public void setAttenuationResult(int attenuationResult) {
+        this.attenuationResult = attenuationResult;
+    }
+
+    public void setTimeResult(int timeResult) {
+        this.timeResult = timeResult;
+    }
+
+    public void setWaterResult(double waterResult) {
+        this.waterResult = waterResult;
+    }
+
+    public void setBreweryEfficiencyResult(double breweryEfficiencyResult) {
+        this.breweryEfficiencyResult = breweryEfficiencyResult;
+    }
+
+    public void setEnergyResult(int energyResult) {
+        this.energyResult = energyResult;
+    }
+
+    public void setMashEfficiencyResult(int mashEfficiencyResult) {
+        this.mashEfficiencyResult = mashEfficiencyResult;
+    }
+
+    public void setIbuResult(double ibuResult) {
+        this.ibuResult = ibuResult;
+    }
+
+    public void setHopResult(double hopResult) {
+        this.hopResult = hopResult;
+    }
+
+    public JTextField getPasteurizationResultField() {
+        return pasteurizationResultField;
+    }
 }
