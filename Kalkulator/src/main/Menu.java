@@ -654,7 +654,7 @@ public class Menu extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("czas Grzania", jPanel8);
 
-        jPanel9.setName("energia"); // NOI18N
+        jPanel9.setName("energia");
 
         jLabel4.setText("Moc [W]");
 

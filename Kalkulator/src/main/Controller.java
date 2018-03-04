@@ -20,6 +20,7 @@ public class Controller implements Serializable {
             if (Double.valueOf(field.getText()) >= 0) {
                 val = Double.valueOf(field.getText());
                 System.out.println(val);
+
                 //this does not work!!
             } else if (field.getText().isEmpty()) {
                 System.out.println("No value entered. Please enter value in the field.");
@@ -29,15 +30,18 @@ public class Controller implements Serializable {
                         "Warning",
                         JOptionPane.WARNING_MESSAGE);
 
+
             } else {
                 System.out.println("Value cannot be lower than 0");
+                field.setText(null);
                 JOptionPane.showMessageDialog(null,
                         "Value cannot be lower than 0",
                         "Warning",
                         JOptionPane.WARNING_MESSAGE);
             }
 
-        } catch (InputMismatchException exc) {
+        } catch (NumberFormatException exc) {
+            field.setText(null);
             System.out.println("Wrong input. Use numbers only.");
                         JOptionPane.showMessageDialog(null,
                                 "Wrong input. Use numbers only.",
