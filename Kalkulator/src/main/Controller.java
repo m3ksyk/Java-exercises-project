@@ -12,11 +12,7 @@ public class Controller implements Serializable {
         this.menu = menu;
     }
 
-    /**
-     * method returns alphaAcids value from text field
-     *
-     * @return
-     */
+
     public double getFieldValue(JTextField field) {
 
         Double val = null;
@@ -40,13 +36,13 @@ public class Controller implements Serializable {
     }
 
     void obliczPasteryzacjeActionPerformed(ActionEvent evt) {
-        if (menu.getTempPas() > 60) {
+        if (menu.getTempPas() >= 60) {
             menu.setPasteurizationResult((int) Math.pow((menu.getPasteurizationTime() * 1.393), (menu.getTempPas() - 60)));
             System.out.println("" + menu.getPasteurizationResult());
             menu.getPasteurizationResultField().setText("" + menu.getPasteurizationResult());
         } else {
             System.out.println("Za niska temperatura. Podaj wartosc powyzej 60 degC");
-            menu.dispose();
+            return;
         }
     }
 

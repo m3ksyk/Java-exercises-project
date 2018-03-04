@@ -22,119 +22,8 @@ public class Menu extends javax.swing.JFrame {
         initComponents();
     }
 
-    /**
-     *  method returns alphaAcids value from text field
-     * @return
-     */
-    public double getFieldValue(JTextField field) {
-
-        return controller.getFieldValue(field);
-    }
-
-    public double getHopMass() {
-        return controller.getFieldValue(masaChmielu);
-    }
-
-    public double getPasteurizationTime() {
-        return controller.getFieldValue(czasPasteryzacji);
-    }
-
-    public double getTheorExtract() {
-        return controller.getFieldValue(ekstraktTeor);
-    }
 
 
-    public double getPractExtract() {
-        return controller.getFieldValue(ekstrakt1);
-    }
-
-    public double getExtract() {
-        return controller.getFieldValue(ekstrakt);
-    }
-
-    public double getUtilization1() {
-        return controller.getFieldValue(utylizacja1);
-    }
-
-    public double getAlphaAcids1() {
-        return controller.getFieldValue(alfaKwasy1);
-    }
-
-    public double getWortVolume1() {
-        return controller.getFieldValue(objBrzeczki1);
-    }
-
-    public double getIb() {
-        return controller.getFieldValue(ibu);
-    }
-
-    public double getMaltMass() {
-    return controller.getFieldValue(zasyp);
-    }
-
-    public double getBlgK() {
-    return controller.getFieldValue(blgKonc);
-    }
-
-    public double getBlgP() {
-        return controller.getFieldValue(blgPocz);
-    }
-
-    public double getAlphaAcids() {
-    return controller.getFieldValue(alfaKwasy);
-    }
-
-    public double getUtilization() {
-    return controller.getFieldValue(utylizacja);
-    }
-
-    public double getWortVolume() {
-        return controller.getFieldValue(objBrzeczki);
-    }
-
-    public double getTime() {
-        return controller.getFieldValue(czas);
-    }
-
-    public double getPower() {
-        return controller.getFieldValue(Moc);
-    }
-
-    public double getEfficiency1() {
-        return controller.getFieldValue(wydajnosc1);
-    }
-
-    public double getPower1() {
-    return controller.getFieldValue(moc1);
-    }
-
-    public double getVolume() {
-    return controller.getFieldValue(objetosc);
-    }
-
-    public double getTk() {
-        return controller.getFieldValue(tempKonc);
-    }
-
-    public double getTp() {
-        return controller.getFieldValue(tempPocz);
-    }
-
-    public double getTime2() {
-    return controller.getFieldValue(czas2);
-    }
-
-    public double getPower2() {
-    return controller.getFieldValue(moc2);
-    }
-
-    public double getTempPas() {
-        return controller.getFieldValue(temperaturaPasteryzacji);
-    }
-
-    public double getEfficiency() {
-    return controller.getFieldValue(wydajnosc);
-    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -252,7 +141,17 @@ public class Menu extends javax.swing.JFrame {
 
         jLabel35.setText("IBU");
 
+        calculateIBUButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                controller.obliczIBUActionPerformed(evt);
+            }
+        });
+
         masaChmielu.setName("masaChmielu");
+
+
+
+
 
         ibuResultField.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
 
@@ -837,41 +736,41 @@ public class Menu extends javax.swing.JFrame {
         pack();
     }
 
-    private void obliczPasteryzacjeActionPerformed(java.awt.event.ActionEvent evt) {
-        controller.obliczPasteryzacjeActionPerformed(evt);
-    }
+//    private void obliczPasteryzacjeActionPerformed(java.awt.event.ActionEvent evt) {
+//        controller.obliczPasteryzacjeActionPerformed(evt);
+//    }
+//
+//    private void obliczEnergieActionPerformed(java.awt.event.ActionEvent evt) {
+//        controller.obliczEnergieActionPerformed(evt);
+//    }
+//
+//    private void obliczCzasActionPerformed(java.awt.event.ActionEvent evt) {
+//        controller.obliczCzasActionPerformed(evt);
+//    }
+//
+//    private void obliczWydajnoscZacieruActionPerformed(java.awt.event.ActionEvent evt) {
+//        controller.obliczWydajnoscZacieruActionPerformed(evt);
+//    }
+//
+//    private void obliczWydajnoscWarzelniActionPerformed(java.awt.event.ActionEvent evt) {
+//        controller.obliczWydajnoscWarzelniActionPerformed(evt);
+//    }
+//
+//    private void obliczWodeActionPerformed(java.awt.event.ActionEvent evt) {
+//        controller.obliczWodeActionPerformed(evt);
+//    }
+//
+//    private void obliczIBUActionPerformed(java.awt.event.ActionEvent evt) {
+//        controller.obliczIBUActionPerformed(evt);
+//    }
+//
+//    private void obliczChmielActionPerformed(java.awt.event.ActionEvent evt) {
+//        controller.obliczChmielActionPerformed(evt);
+//    }
 
-    private void obliczEnergieActionPerformed(java.awt.event.ActionEvent evt) {
-        controller.obliczEnergieActionPerformed(evt);
-    }
-
-    private void obliczCzasActionPerformed(java.awt.event.ActionEvent evt) {
-        controller.obliczCzasActionPerformed(evt);
-    }
-
-    private void obliczWydajnoscZacieruActionPerformed(java.awt.event.ActionEvent evt) {
-        controller.obliczWydajnoscZacieruActionPerformed(evt);
-    }
-
-    private void obliczWydajnoscWarzelniActionPerformed(java.awt.event.ActionEvent evt) {
-        controller.obliczWydajnoscWarzelniActionPerformed(evt);
-    }
-
-    private void obliczWodeActionPerformed(java.awt.event.ActionEvent evt) {
-        controller.obliczWodeActionPerformed(evt);
-    }
-
-    private void obliczIBUActionPerformed(java.awt.event.ActionEvent evt) {
-        controller.obliczIBUActionPerformed(evt);
-    }
-
-    private void obliczChmielActionPerformed(java.awt.event.ActionEvent evt) {
-        controller.obliczChmielActionPerformed(evt);
-    }
-
-    private void calculateAttenuationActionPerformed(java.awt.event.ActionEvent evt) {
-        controller.calculateAttenuationActionPerformed(evt);
-    }
+//    private void calculateAttenuationActionPerformed(java.awt.event.ActionEvent evt) {
+//        controller.calculateAttenuationActionPerformed(evt);
+//    }
 
     /**
      * variables and fields declaration. DO NOT MODIFY
@@ -978,6 +877,116 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JTextField mashEfficiencyResultField;
     private javax.swing.JTextField zasyp;
 
+    public double getFieldValue(JTextField field) {
+
+        return controller.getFieldValue(field);
+    }
+
+    public double getHopMass() {
+        return controller.getFieldValue(masaChmielu);
+    }
+
+    public double getPasteurizationTime() {
+        return controller.getFieldValue(czasPasteryzacji);
+    }
+
+    public double getTheorExtract() {
+        return controller.getFieldValue(ekstraktTeor);
+    }
+
+
+    public double getPractExtract() {
+        return controller.getFieldValue(ekstrakt1);
+    }
+
+    public double getExtract() {
+        return controller.getFieldValue(ekstrakt);
+    }
+
+    public double getUtilization1() {
+        return controller.getFieldValue(utylizacja1);
+    }
+
+    public double getAlphaAcids1() {
+        return controller.getFieldValue(alfaKwasy1);
+    }
+
+    public double getWortVolume1() {
+        return controller.getFieldValue(objBrzeczki1);
+    }
+
+    public double getIb() {
+        return controller.getFieldValue(ibu);
+    }
+
+    public double getMaltMass() {
+        return controller.getFieldValue(zasyp);
+    }
+
+    public double getBlgK() {
+        return controller.getFieldValue(blgKonc);
+    }
+
+    public double getBlgP() {
+        return controller.getFieldValue(blgPocz);
+    }
+
+    public double getAlphaAcids() {
+        return controller.getFieldValue(alfaKwasy);
+    }
+
+    public double getUtilization() {
+        return controller.getFieldValue(utylizacja);
+    }
+
+    public double getWortVolume() {
+        return controller.getFieldValue(objBrzeczki);
+    }
+
+    public double getTime() {
+        return controller.getFieldValue(czas);
+    }
+
+    public double getPower() {
+        return controller.getFieldValue(Moc);
+    }
+
+    public double getEfficiency1() {
+        return controller.getFieldValue(wydajnosc1);
+    }
+
+    public double getPower1() {
+        return controller.getFieldValue(moc1);
+    }
+
+    public double getVolume() {
+        return controller.getFieldValue(objetosc);
+    }
+
+    public double getTk() {
+        return controller.getFieldValue(tempKonc);
+    }
+
+    public double getTp() {
+        return controller.getFieldValue(tempPocz);
+    }
+
+    public double getTime2() {
+        return controller.getFieldValue(czas2);
+    }
+
+    public double getPower2() {
+        return controller.getFieldValue(moc2);
+    }
+
+    public double getTempPas() {
+        return controller.getFieldValue(temperaturaPasteryzacji);
+    }
+
+    public double getEfficiency() {
+        return controller.getFieldValue(wydajnosc);
+    }
+
     public int getPasteurizationResult() {
         return pasteurizationResult;
     }
@@ -1046,6 +1055,11 @@ public class Menu extends javax.swing.JFrame {
         return timeResultField;
     }
 
+    public JTextField getPasteurizationResultField() {
+        return pasteurizationResultField;
+    }
+
+
     public void setPasteurizationResult(int pasteurizationResult) {
         this.pasteurizationResult = pasteurizationResult;
     }
@@ -1082,7 +1096,4 @@ public class Menu extends javax.swing.JFrame {
         this.hopResult = hopResult;
     }
 
-    public JTextField getPasteurizationResultField() {
-        return pasteurizationResultField;
-    }
 }
