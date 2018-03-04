@@ -543,7 +543,7 @@ public class Menu extends javax.swing.JFrame {
                                                 .addComponent(czas, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
                                                 .addComponent(wydajnosc)
                                                 .addComponent(Moc))
-                                        .addComponent(waterResultField, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(waterResultField, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addContainerGap(42, Short.MAX_VALUE))
         );
         jPanel7Layout.setVerticalGroup(
@@ -567,7 +567,7 @@ public class Menu extends javax.swing.JFrame {
                                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                         .addComponent(jLabel16)
                                         .addComponent(waterResultField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addContainerGap(70, Short.MAX_VALUE))
+                                .addContainerGap(42, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("woda odpar", jPanel7);

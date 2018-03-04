@@ -3,6 +3,7 @@ package main;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.io.Serializable;
+import java.text.DecimalFormat;
 import java.util.InputMismatchException;
 
 public class Controller implements Serializable {
@@ -11,6 +12,9 @@ public class Controller implements Serializable {
     public Controller(Menu menu) {
         this.menu = menu;
     }
+
+    DecimalFormat format1 = new DecimalFormat("#.00");
+    DecimalFormat format2 = new DecimalFormat("#.000");
 
 
     public double getFieldValue(JTextField field) {
@@ -76,7 +80,7 @@ public class Controller implements Serializable {
     void obliczEnergieActionPerformed(ActionEvent evt) {
         menu.setEnergyResult((int) ((menu.getPower2() * menu.getTime2()) / 1000));
         System.out.println("" + menu.getEnergyResult());
-        menu.getEnergyResultField().setText("" + menu.getEnergyResult());
+        menu.getEnergyResultField().setText("" + (format2.format(menu.getEnergyResult())));
     }
 
     void obliczCzasActionPerformed(ActionEvent evt) {
@@ -88,36 +92,36 @@ public class Controller implements Serializable {
     void obliczWydajnoscZacieruActionPerformed(ActionEvent evt) {
         menu.setMashEfficiencyResult((int) ((menu.getPractExtract() / menu.getTheorExtract()) * 100));
         System.out.println("" + menu.getMashEfficiencyResult());
-        menu.getMashEfficiencyResultField().setText("" + menu.getMashEfficiencyResult());
+        menu.getMashEfficiencyResultField().setText("" + (format1.format(menu.getMashEfficiencyResult())));
     }
 
     void obliczWydajnoscWarzelniActionPerformed(ActionEvent evt) {
         menu.setBreweryEfficiencyResult((menu.getExtract() / menu.getMaltMass()));
         System.out.println("" + menu.getBreweryEfficiencyResult());
-        menu.getBreweryEfficiencyResultField().setText("" + menu.getBreweryEfficiencyResult());
+        menu.getBreweryEfficiencyResultField().setText("" + (format1.format(menu.getBreweryEfficiencyResult())));
     }
 
     void obliczWodeActionPerformed(ActionEvent evt) {
         menu.setWaterResult(((menu.getPower() * menu.getEfficiency() * menu.getTime()) / 626));
         System.out.println("" + menu.getWaterResult());
-        menu.getWaterResultField().setText("" + menu.getWaterResult());
+        menu.getWaterResultField().setText("" + (format1.format(menu.getWaterResult())));
     }
 
     void obliczIBUActionPerformed(ActionEvent evt) {
         menu.setIbuResult(((menu.getHopMass() * menu.getAlphaAcids() * menu.getUtilization()) / (menu.getWortVolume() * 10)));
         System.out.println("" + menu.getIbuResult());
-        menu.getIbuResultField().setText("" + menu.getIbuResult());
+        menu.getIbuResultField().setText("" + (format1.format(menu.getIbuResult())));
     }
 
     void obliczChmielActionPerformed(ActionEvent evt) {
         menu.setHopResult((menu.getIb() * menu.getWortVolume1() * 10) / (menu.getAlphaAcids1() * menu.getUtilization1()));
         System.out.println("" + menu.getHopResult());
-        menu.getHopsResultField().setText("" + menu.getHopResult());
+        menu.getHopsResultField().setText("" + (format1.format(menu.getHopResult())));
     }
 
     void calculateAttenuationActionPerformed(ActionEvent evt) {
         menu.setAttenuationResult((int) (100 * ((menu.getBlgP() - menu.getBlgK()) / menu.getBlgP())));
         System.out.println("" + menu.getAttenuationResult());
-        menu.getAttenuationResultField().setText("" + menu.getAttenuationResult());
+        menu.getAttenuationResultField().setText("" + (format1.format(menu.getAttenuationResult())));
     }
 }
