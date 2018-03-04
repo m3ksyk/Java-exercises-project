@@ -22,9 +22,6 @@ public class Menu extends javax.swing.JFrame {
         initComponents();
     }
 
-
-
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -149,12 +146,7 @@ public class Menu extends javax.swing.JFrame {
 
         masaChmielu.setName("masaChmielu");
 
-
-
-
-
         ibuResultField.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -735,42 +727,6 @@ public class Menu extends javax.swing.JFrame {
         );
         pack();
     }
-
-//    private void obliczPasteryzacjeActionPerformed(java.awt.event.ActionEvent evt) {
-//        controller.obliczPasteryzacjeActionPerformed(evt);
-//    }
-//
-//    private void obliczEnergieActionPerformed(java.awt.event.ActionEvent evt) {
-//        controller.obliczEnergieActionPerformed(evt);
-//    }
-//
-//    private void obliczCzasActionPerformed(java.awt.event.ActionEvent evt) {
-//        controller.obliczCzasActionPerformed(evt);
-//    }
-//
-//    private void obliczWydajnoscZacieruActionPerformed(java.awt.event.ActionEvent evt) {
-//        controller.obliczWydajnoscZacieruActionPerformed(evt);
-//    }
-//
-//    private void obliczWydajnoscWarzelniActionPerformed(java.awt.event.ActionEvent evt) {
-//        controller.obliczWydajnoscWarzelniActionPerformed(evt);
-//    }
-//
-//    private void obliczWodeActionPerformed(java.awt.event.ActionEvent evt) {
-//        controller.obliczWodeActionPerformed(evt);
-//    }
-//
-//    private void obliczIBUActionPerformed(java.awt.event.ActionEvent evt) {
-//        controller.obliczIBUActionPerformed(evt);
-//    }
-//
-//    private void obliczChmielActionPerformed(java.awt.event.ActionEvent evt) {
-//        controller.obliczChmielActionPerformed(evt);
-//    }
-
-//    private void calculateAttenuationActionPerformed(java.awt.event.ActionEvent evt) {
-//        controller.calculateAttenuationActionPerformed(evt);
-//    }
 
     /**
      * variables and fields declaration. DO NOT MODIFY

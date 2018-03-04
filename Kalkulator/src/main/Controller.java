@@ -20,17 +20,30 @@ public class Controller implements Serializable {
             if (Double.valueOf(field.getText()) >= 0) {
                 val = Double.valueOf(field.getText());
                 System.out.println(val);
+                //this does not work!!
             } else if (field.getText().isEmpty()) {
                 System.out.println("No value entered. Please enter value in the field.");
-                //add an alert here
+
+                JOptionPane.showMessageDialog(null,
+                        "No value entered. Please enter value in the field.",
+                        "Warning",
+                        JOptionPane.WARNING_MESSAGE);
+
             } else {
                 System.out.println("Value cannot be lower than 0");
-                //add an alert or something
+                JOptionPane.showMessageDialog(null,
+                        "Value cannot be lower than 0",
+                        "Warning",
+                        JOptionPane.WARNING_MESSAGE);
             }
 
         } catch (InputMismatchException exc) {
             System.out.println("Wrong input. Use numbers only.");
-            exc.getMessage();
+                        JOptionPane.showMessageDialog(null,
+                                "Wrong input. Use numbers only.",
+                    "Warning",
+                    JOptionPane.WARNING_MESSAGE);
+                       exc.getMessage();
         }
         return val;
     }
@@ -41,7 +54,17 @@ public class Controller implements Serializable {
             System.out.println("" + menu.getPasteurizationResult());
             menu.getPasteurizationResultField().setText("" + menu.getPasteurizationResult());
         } else {
-            System.out.println("Za niska temperatura. Podaj wartosc powyzej 60 degC");
+           //PL // System.out.println("Za niska temperatura. Podaj wartosc powyzej 60 degC");
+//            JOptionPane.showMessageDialog(null,
+//                    "Za niska temperatura. Podaj wartosc powyzej 60 degC",
+//                    "Warning",
+//                    JOptionPane.WARNING_MESSAGE);
+//            return;
+            System.out.println("Temperature value too low. Input value greater than 60 degC");
+            JOptionPane.showMessageDialog(null,
+                    "Temperature value too low. Input value greater than 60 degC",
+                    "Warning",
+                    JOptionPane.WARNING_MESSAGE);
             return;
         }
     }
